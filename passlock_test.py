@@ -16,7 +16,7 @@ class TestPasslock(unittest.testcase):
 
     def test_init(self):
         '''
-        test case to chek if the object has been initialized correctly
+        test class to check if the object has been initialized correctly
         '''
         self.assertEqual(self.new_user.username,'FrankGarlinsk')
         self.assertEqual(self.new_user.password,'1234zx')
@@ -24,3 +24,4 @@ class TestPasslock(unittest.testcase):
 
 if __name__ == '__main__':
     unittest.main()
+    
