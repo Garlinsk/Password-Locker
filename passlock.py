@@ -4,7 +4,7 @@ class Passlock:
     Class that generates new instances of user.
     '''
 
-    user = [] # Empty user list
+    user_list = [] # Empty user list
 
     def __init__(self, username, password, email):
 
@@ -13,3 +13,11 @@ class Passlock:
         self.username = username
         self.password = password
         self.email = email
+
+
+    def save_user(self):
+        """
+        A method that saves a new user instace into the user list
+        """
+        User.user_list.append(self)
+    
