@@ -1,3 +1,4 @@
+import pyperclip
 class User:
 
     '''
@@ -50,3 +51,7 @@ class User:
             if user.user_name == user:
                 return user 
 
+    @classmethod
+    def copy_email(cls,user):
+        user_found = user.find_by_username(user)
+        pyperclip.copy(user_found.email)
