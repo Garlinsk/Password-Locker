@@ -1,7 +1,7 @@
 import unittest #Importting the unittest module
 from passlock import User #Importing the user class
 
-class TestUser(unittest.testcase):
+class TestPasslock(unittest.Testcase):
     """
     Test class that defines test cases for the User class.
 
@@ -38,7 +38,14 @@ class TestUser(unittest.testcase):
         self.new_user.save_user()
         test_user = User("Test","user","1235zx","test@email.com") # new user
         test_user.save_user()
-        self.assertEqual(len(User.user_list),2)      
+        self.assertEqual(len(User.user_list),2) 
+
+    def test_del_user(self):
+        """
+        test class to test delete user method
+        """
+        self.new_user.delete_user()# Deleting a contact object
+        self.assertEqual(len(User.user_list),0)     
 
 if __name__ == "__main__":
     unittest.main()

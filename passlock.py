@@ -22,4 +22,16 @@ class User:
         """
         User.user_list.append(self)
     
+    def save_multiple_user(self):
+        """
+        save_multiple_user method is  to check if we can save multiple user
+        objects to our user_list
+        """
+        self.new_user.save_user()
+
+    def delete_user(self):
+        '''
+        delete_account method deletes a  saved account from the list
+        '''
+        User.user_list.remove(self)
 
