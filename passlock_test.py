@@ -45,7 +45,21 @@ class TestPasslock(unittest.Testcase):
         test class to test delete user method
         """
         self.new_user.delete_user()# Deleting a contact object
-        self.assertEqual(len(User.user_list),0)     
+        self.assertEqual(len(User.user_list),0) 
+
+    def test_find_user_by_username(self):
+        '''
+        test to check if we can find a user by username and display information
+        '''
+
+        self.new_user.save_user()
+        test_user = User("Test","user","1235zx","test@user.com") # new user
+        test_user.save_user()
+
+        found_user = User.find_by_username("FrankGarlinsk")
+
+        self.assertEqual(found_user.email,test_user.email) 
+
 
 if __name__ == "__main__":
     unittest.main()
