@@ -1,4 +1,4 @@
-class Passlock:
+class User:
 
     '''
     Class that generates new instances of user.
@@ -16,8 +16,10 @@ class Passlock:
 
 
     def save_user(self):
+
         """
         A method that saves a new user instace into the user list
         """
         User.user_list.append(self)
     
+
