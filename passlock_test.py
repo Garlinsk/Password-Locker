@@ -1,7 +1,8 @@
-import unittest #Importting the unittest module
+import unittest #Importing the unittest module
 from passlock import User #Importing the user class
+import pyperclip
 
-class TestPasslock(unittest.Testcase):
+class Testser(unittest.Testcase):
     """
     Test class that defines test cases for the User class.
 

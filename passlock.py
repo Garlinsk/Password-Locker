@@ -1,9 +1,9 @@
 import pyperclip
 class User:
 
-    '''
+    """
     Class that generates new instances of user.
-    '''
+    """
 
     user_list = [] # Empty user list
 
@@ -35,6 +35,12 @@ class User:
         delete_account method deletes a  saved account from the list
         '''
         User.user_list.remove(self)
+
+class Credentials():
+    """
+    Create credentials class to help create new objects of credentials
+    """
+    credentials_list = []
 
     @classmethod
     def find_by_username(cls,user):
