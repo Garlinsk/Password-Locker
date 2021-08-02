@@ -23,6 +23,11 @@ class TestCredentials(unittest.Testcase):
         """
         test class to check if the object has been initialized correctly
         """
+    def save_details(self):
+        """
+        method to store a new credential to the credentials list
+        """
+        Credentials.credentials_list.append(self)
         self.assertEqual(self.new_user.username,"FrankGarlinsk")
         self.assertEqual(self.new_user.password,"1234zx")
         self.assertEqual(self.new_user.email,"garlinsk@email.com")
@@ -62,7 +67,14 @@ class TestCredentials(unittest.Testcase):
 
         found_user = User.find_by_username("FrankGarlinsk")
 
-        self.assertEqual(found_user.email,test_user.email) 
+        self.assertEqual(found_user.email,test_user.email)
+
+    def save_credential_test(self):
+        """
+        test case to test if the crential object is saved into the credentials list.
+        """
+        self.new_credential.save_details()
+        self.assertEqual(len(Credentials.credentials_list),1)
 
 
 if __name__ == "__main__":

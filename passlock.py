@@ -63,6 +63,12 @@ class Credentials():
         method that defines user credentials to be stored
         """
 
+    def save_details(self):
+        """
+        method to store a new credential to the credentials list
+        """
+        Credentials.credentials_list.append(self)   
+
     @classmethod
     def copy_email(cls,user):
         user_found = user.find_by_username(user)
