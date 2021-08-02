@@ -1,8 +1,10 @@
 import unittest #Importing the unittest module
 from passlock import User #Importing the user class
+from passlock import Credentials
 import pyperclip
 
-class Testser(unittest.Testcase):
+
+class TestCredentials(unittest.Testcase):
     """
     Test class that defines test cases for the User class.
 
@@ -14,6 +16,7 @@ class Testser(unittest.Testcase):
         Method that runs before each individual test methods run.
         """
         self.new_user = User("FrankGarlinsk","1234zx", "garlinsk@email.com")
+        self.new_credential = Credentials('email','FrankGarlinsk','1234zx')
 
 
     def test_init(self):

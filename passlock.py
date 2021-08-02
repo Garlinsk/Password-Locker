@@ -57,6 +57,12 @@ class Credentials():
             if user.user_name == user:
                 return user 
 
+
+    def __init__(self,account,userName, password):
+        """
+        method that defines user credentials to be stored
+        """
+
     @classmethod
     def copy_email(cls,user):
         user_found = user.find_by_username(user)
