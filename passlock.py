@@ -1,4 +1,6 @@
+from os import name
 import pyperclip
+
 class User:
 
     """
@@ -51,11 +53,15 @@ class Credentials():
             user: Username to search for
         Returns :
             Name of person that matches the user.
-        '''
+        '''@classmethod
+    def copy_email(cls,user):
+            user_found = user.find_by_username(user)
+            pyperclip.copy(user_found.email)
+            
 
-        for user in cls.user_list:
-            if user.user_name == user:
-                return user 
+            for user in cls.user_list:
+                if user.user_name == user:
+                    return user 
 
 
     def __init__(self,account,userName, password):
@@ -69,7 +75,8 @@ class Credentials():
         """
         Credentials.credentials_list.append(self)   
 
+    
     @classmethod
     def copy_email(cls,user):
-        user_found = user.find_by_username(user)
-        pyperclip.copy(user_found.email)
+        user_found = User.find_by_username(name)
+        pyperclip.copy(user_found.email)    
